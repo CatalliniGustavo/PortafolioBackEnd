@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/hduras")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "https://portafoliocatallinigustavo.web.app")
 public class HdurasController {
     @Autowired
     IHdurasService iHdurasService;
