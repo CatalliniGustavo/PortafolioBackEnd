@@ -48,7 +48,7 @@ public class AuthController {
         
         if (nuevoUsuario.getPassword().length() != 8 )
             return new ResponseEntity(new Mensaje("La contraseña tiene que tener 8 caracteres"), HttpStatus.BAD_REQUEST);
-        if (nuevoUsuario.getApellido().length() == 0 || nuevoUsuario.getNombre().length() == 0)
+        if (nuevoUsuario.getApellido() == null || nuevoUsuario.getNombre() == null)
             return new ResponseEntity(new Mensaje("Falta nombre 0/y apellido"), HttpStatus.BAD_REQUEST);
         if (usuarioService.existsByEmail(nuevoUsuario.getEmail()))
             return new ResponseEntity(new Mensaje("Ese Email ya esta relacionado a otra cuenta"), HttpStatus.BAD_REQUEST);
