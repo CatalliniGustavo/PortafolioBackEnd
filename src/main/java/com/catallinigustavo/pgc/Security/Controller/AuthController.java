@@ -46,7 +46,7 @@ public class AuthController {
     @PostMapping("/nuevo")
     public ResponseEntity<?> nuevo(@Valid @RequestBody NuevoUsuario nuevoUsuario, BindingResult bindingResult){
         
-        if (nuevoUsuario.getPassword().length() < 8)
+        if (nuevoUsuario.getPassword().length() != 8 )
             return new ResponseEntity(new Mensaje("La contraseña tiene que tener 8 caracteres"), HttpStatus.BAD_REQUEST);
         if (bindingResult.hasErrors())
             return new ResponseEntity(new Mensaje("Campos mal puestos o email invalido"), HttpStatus.BAD_REQUEST);
