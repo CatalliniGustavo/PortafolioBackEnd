@@ -48,6 +48,7 @@ public class ProyectosController {
         proAnt.setGithub(proyectos.getGithub());
         proAnt.setImgIcono(proyectos.getImgIcono());
         proAnt.setNombre(proyectos.getNombre());
+        proAnt.setLinkProy(proyectos.getLinkProy());
         iProyectosService.saveProyectos(proAnt);
         return new ResponseEntity(new Mensaje("El Proyecto fue actualizado"), HttpStatus.OK);
     }

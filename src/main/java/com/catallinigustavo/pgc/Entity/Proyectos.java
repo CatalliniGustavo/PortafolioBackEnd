@@ -19,15 +19,17 @@ public class Proyectos {
     private String imgIcono;
     private String descripcion;
     private String github;
+    private String linkProy;
 
     public Proyectos() {
     }
 
-    public Proyectos(String nombre, String imgIcono, String descripcion, String github) {
+    public Proyectos(String nombre, String imgIcono, String descripcion, String github, String linkProy) {
         this.nombre = nombre;
         this.imgIcono = imgIcono;
         this.descripcion = descripcion;
         this.github = github;
+        this.linkProy = linkProy;
     }
 
     public long getId() {
@@ -69,4 +71,13 @@ public class Proyectos {
     public void setGithub(String github) {
         this.github = github;
     }
+
+    public String getLinkProy() {
+        return linkProy;
+    }
+
+    public void setLinkProy(String linkProy) {
+        this.linkProy = linkProy;
+    }
+
 }
