@@ -48,7 +48,7 @@ public class JwtProvider {
         } catch (ExpiredJwtException e) {
             logger.error("Token Expirado");
         } catch (IllegalArgumentException e) {
-            logger.error("Token Vacio");
+            logger.error("Token Vacío");
         } catch (SignatureException e) {
             logger.error("Firma no Válida");
         }

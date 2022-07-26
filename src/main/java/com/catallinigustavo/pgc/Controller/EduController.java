@@ -35,7 +35,7 @@ public class EduController {
     @PostMapping("/crear")
     public ResponseEntity<?> crearEducacion(@RequestBody Educacion educacion) {
         iEducacionService.saveEducacion(educacion);
-        return new ResponseEntity(new Mensaje("La Educacion fue guardada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("La Educación fue guardada"), HttpStatus.OK);
     }
 
     @PutMapping("/update/{id}")
@@ -58,7 +58,7 @@ public class EduController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") long id) {
         iEducacionService.deletEducacion(id);
-        return new ResponseEntity(new Mensaje("Educacion eliminada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Educación eliminada"), HttpStatus.OK);
     }
 
     @GetMapping("/detail/{id}")

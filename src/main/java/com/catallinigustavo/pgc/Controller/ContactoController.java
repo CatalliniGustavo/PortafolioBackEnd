@@ -35,7 +35,7 @@ public class ContactoController {
     @PostMapping("/crear")
     public ResponseEntity<?> crearContacto(@RequestBody Contacto contacto) {
         if(contacto.getLinkIcono().isEmpty() || contacto.getNombre().isEmpty())
-            return new ResponseEntity(new Mensaje("Campos vacíos o erroneos"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Campos vacíos o erróneos"), HttpStatus.BAD_REQUEST);
         iContactoService.saveContacto(contacto);
         return new ResponseEntity(new Mensaje("El Contacto fue guardado"), HttpStatus.OK);
     }

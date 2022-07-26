@@ -35,7 +35,7 @@ public class RedesController {
     @PostMapping("/crear")
     public ResponseEntity<?> crearRedes(@RequestBody Redes redes) {
         if(redes.getLinkIcono().isEmpty() || redes.getNombre().isEmpty())
-            return new ResponseEntity(new Mensaje("Campos vacíos o erroneos"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Campos vacíos o erróneos"), HttpStatus.BAD_REQUEST);
         
         iRedesService.saveRedes(redes);
         return new ResponseEntity(new Mensaje("La Red fue guardada"), HttpStatus.OK);

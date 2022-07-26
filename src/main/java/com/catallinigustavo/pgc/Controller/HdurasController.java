@@ -34,9 +34,9 @@ public class HdurasController {
     @PostMapping("/crear")
     public ResponseEntity<?> crearHduras(@RequestBody Hduras hduras) {
         if (hduras.getNombre() == null)
-            return new ResponseEntity(new Mensaje("Campos vacíos o erroneos"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Campos vacíos o erróneos"), HttpStatus.BAD_REQUEST);
         iHdurasService.saveHduras(hduras);
-        return new ResponseEntity(new Mensaje("La Hduras fue guardada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("La Habilidad dura fue guardada"), HttpStatus.OK);
     }
     
     @PutMapping("/update/{id}")
@@ -49,14 +49,14 @@ public class HdurasController {
         hdAnt.setImgIcono(hduras.getImgIcono());
         hdAnt.setNombre(hduras.getNombre());
         iHdurasService.saveHduras(hdAnt);
-        return new ResponseEntity(new Mensaje("La Hduras fue actualizada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("La Habilidad dura fue actualizada"), HttpStatus.OK);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") long id) {
         iHdurasService.deletHduras(id);
-        return new ResponseEntity(new Mensaje("Hduras eliminada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Habilidad dura eliminada"), HttpStatus.OK);
     }
 
     @GetMapping("/detail/{id}")

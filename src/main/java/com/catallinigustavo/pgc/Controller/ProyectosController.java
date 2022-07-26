@@ -36,7 +36,7 @@ public class ProyectosController {
         if (proyectos.getNombre() == null)
             return new ResponseEntity(new Mensaje("Debe colocar el título"), HttpStatus.BAD_REQUEST);
         iProyectosService.saveProyectos(proyectos);
-        return new ResponseEntity(new Mensaje("El Proyectos fue guardado"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("El Proyecto fue guardado"), HttpStatus.OK);
     }
     
     @PutMapping("/update/{id}")
@@ -57,7 +57,7 @@ public class ProyectosController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") long id) {
         iProyectosService.deletProyectos(id);
-        return new ResponseEntity(new Mensaje("Proyectos eliminado"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Proyecto eliminado"), HttpStatus.OK);
     }
 
     @GetMapping("/detail/{id}")

@@ -36,9 +36,9 @@ public class HblanController {
     public ResponseEntity<?> crearHblandas(@RequestBody Hblandas hblandas) {
        
         if (hblandas.getNombre() == null)
-            return new ResponseEntity(new Mensaje("Campos vacíos o erroneos"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Campos vacíos o erróneos"), HttpStatus.BAD_REQUEST);
         iHblandasService.saveHblandas(hblandas);
-        return new ResponseEntity(new Mensaje("La Hblandas fue guardada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("La Habilidad blanda fue guardada"), HttpStatus.OK);
     }
     
     @PutMapping("/update/{id}")
@@ -52,7 +52,7 @@ public class HblanController {
         hbAnt.setImgIcono(hblandas.getImgIcono());
         hbAnt.setNombre(hblandas.getNombre());
         iHblandasService.saveHblandas(hbAnt);
-        return new ResponseEntity(new Mensaje("La Hblandas fue actualizada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("La Habilidad blanda fue actualizada"), HttpStatus.OK);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
